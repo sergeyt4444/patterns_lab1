@@ -19,11 +19,11 @@ public class UserInterface extends Application{
         b.SetX(300);
         b.SetY(140);
         IPoint c = new Point();
-        c.SetX(50);
-        c.SetY(530);
+        c.SetX(150);
+        c.SetY(130);
         IPoint d = new Point();
         d.SetX(250);
-        d.SetY(570);
+        d.SetY(170);
         VisualLine visualLine = new VisualLine(a,b);
         VisualBezier visualBezier = new VisualBezier(a,b,c,d);
 

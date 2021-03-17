@@ -14,12 +14,6 @@ public class VisualBezier extends VisualCurve{
     public void Draw(GraphicsContext g) {
         double aX = bezier.a.GetX();
         double aY = bezier.a.GetY();
-        double bX = bezier.b.GetX();
-        double bY = bezier.b.GetY();
-        double cX = bezier.c.GetX();
-        double cY = bezier.c.GetY();
-        double dX = bezier.d.GetX();
-        double dY = bezier.d.GetY();
 
         double tempStartX = aX;
         double tempStartY = aY;

@@ -1,3 +1,5 @@
+import javafx.scene.canvas.GraphicsContext;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +11,7 @@ public class VisualLine extends VisualCurve{
         line = new Line(a,b);
     }
 
-    public void Draw(Graphics g) {
+    public void Draw(GraphicsContext g) {
 //        double sizeX, sizeY;
 //        double minX, minY, maxX, maxY;
         double startX = line.a.GetX();
@@ -36,7 +38,9 @@ public class VisualLine extends VisualCurve{
 //            minY = startY;
 //            sizeY = finishY - startY;
 //        }
-        g.drawLine((int)(startX), (int)(finishX), (int)(startY), (int)(finishY));
+
+        g.strokeLine(startX, startY, finishX, finishY);
+
     }
 
     public IPoint GetPoint(double t) {

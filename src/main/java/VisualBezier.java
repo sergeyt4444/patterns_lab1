@@ -1,3 +1,5 @@
+import javafx.scene.canvas.GraphicsContext;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +11,28 @@ public class VisualBezier extends VisualCurve{
 
     protected Bezier bezier;
 
-    public void Draw(Graphics g) {
+    public void Draw(GraphicsContext g) {
+        double aX = bezier.a.GetX();
+        double aY = bezier.a.GetY();
+        double bX = bezier.b.GetX();
+        double bY = bezier.b.GetY();
+        double cX = bezier.c.GetX();
+        double cY = bezier.c.GetY();
+        double dX = bezier.d.GetX();
+        double dY = bezier.d.GetY();
+
+        double tempStartX = aX;
+        double tempStartY = aY;
+        double tempFinishX, tempFinishY;
+
+        for (double temp = 0.01; temp <=1; temp+=0.01) {
+            IPoint tempPoint = bezier.GetPoint(temp);
+            tempFinishX = tempPoint.GetX();
+            tempFinishY = tempPoint.GetY();
+            g.strokeLine(tempStartX, tempStartY, tempFinishX, tempFinishY);
+            tempStartX = tempFinishX;
+            tempStartY = tempFinishY;
+        }
 
     }
 
